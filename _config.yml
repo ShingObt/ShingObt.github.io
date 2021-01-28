@@ -1,10 +1,10 @@
 # Site settings
-title: Freelancer
-email: your-email@domain.com
-url: https://github.com/jeromelachaud/freelancer-theme
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
-keywords: "your keywords, separated by commas"
-skills: "Web Developer - Graphic Artist - User Experience Designer"
+title: Shingo Obata
+email: s.obata5632@gmail.com
+url: https://shingobt.github.io/shingoPortfolio/
+description: "GISer and RSer making apps using Django, Flask, R, and Google Apps Engine."
+keywords: "Forest management, Remote sensing, Spatial analysis, Forest inventory"
+skills: "PhD in Forestry and Natural Resources/Forest Management/Forest Inventory/Spatial Analysis/Remote Sensing/Machine Learning"
 meta_author: LastName FirstName
 
 # Google webmaster tools
@@ -21,42 +21,43 @@ contact: static
 
 # If you use disqus you need disqus shortname
 # https://help.disqus.com/customer/portal/articles/466208
-disqus_shortname: myshortname
+disqus_shortname: Shingo Obata
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
-  primary: 18bc9c #80B3FF
+  primary: ebbe20 #80B3FF
   primary-rgb: "24,288,156" #"128,179,255"
   secondary: 2c3e50 #FD6E8A
   secondary-dark: 233140 #A2122F
 
 # Footer settings
 footer:
-  copyright: Dr. Henry Jekyll
+  copyright: Shingo Obata
   location: Location
   social: Around the Web
-  credits: Credits
+  credits: Shingo Obata
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
+  - title: researchgate
+    url: https://www.researchgate.net/profile/Shingo_Obata
   - title: twitter
-    url: http://twitter.com/jekyllrb
+    url: http://twitter.com/ShingObt
   - title: facebook
-    url:
-  - title: stack-overflow
-    url: http://stackoverflow.com/questions/tagged/jekyll
-  - title: bitbucket
-    url: http://bitbucket.org/jekyll
+    url: https://m.facebook.com/taba.gonsi
+  - title: linkedin
+    url: https://www.linkedin.com/in/shingo-obata-b48a25106/
   - title: github
-    url: http://github.com/jekyll
+    url: https://github.com/ShingObt
+
 
 # Postal address (add as many lines as necessary)
 address:
-  - line: 3481 Melrose Place
-  - line: Beverly Hills, CA 90210
+  - line: the National Institute for Mathematical and Biological Synthesis
+  - line: Knoxville, Tennessee, United States
 
 # Credits content
-credits: 'Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.'
+credits: 'This page is based on <a href="http://startbootstrap.com">Freelancer</a> theme in Jekyll.'
 
 # Build settings
 markdown: kramdown
