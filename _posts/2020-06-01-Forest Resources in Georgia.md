@@ -11,6 +11,12 @@ description: Dynamic features of the forest resources in the state of Georgia is
 ---
 
 # Georgia Forest resources visualization: With Google Earth Engine App 
+
+Dynamic features of the forest resources in the state of Georgia is visualized in this project.
+
+
+
+
 <img src="../img/portfolio/modal-id-1/Capture1.JPG" class="img-responsive" alt="{{ post.alt }}">
 <img src="../img/portfolio/modal-id-1/Capture2.JPG" class="img-responsive" alt="{{ post.alt }}">
 

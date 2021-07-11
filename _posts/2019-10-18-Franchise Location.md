@@ -10,7 +10,12 @@ category: Dashboard, Visualization, Data scraping, Python, R
 description: A dashboard that shows the location and store information of Yoshinoya and Starbucks in Japan. 
 ---
 
+
 # Interactive dashboard for the analysis of store location of Yoshinoya and Starbucks in Japan
+
+A dashboard that shows the location and store information of Yoshinoya and Starbucks in Japan.
+
+
 
 <img src="../img/portfolio/modal-id-2/screenshot.jpeg" class="img-responsive" alt="{{ post.alt }}">
 

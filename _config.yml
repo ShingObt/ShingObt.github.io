@@ -5,7 +5,7 @@ url: https://shingobt.github.io/shingoPortfolio/
 description: "GISer and RSer making apps using Django, Flask, R, and Google Apps Engine."
 keywords: "Forest management, Remote sensing, Spatial analysis, Forest inventory"
 skills: "PhD in Forestry and Natural Resources/Forest Management/Forest Inventory/Spatial Analysis/Remote Sensing/Machine Learning"
-meta_author: LastName FirstName
+meta_author: Obata Shingo
 
 # Google webmaster tools
 google_verify:
@@ -34,7 +34,7 @@ color:
 footer:
   copyright: Shingo Obata
   location: Location
-  social: Around the Web
+  social: SNS & Website
   credits: Shingo Obata
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
