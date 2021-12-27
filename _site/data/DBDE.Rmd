@@ -1,0 +1,215 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+setwd("F:/courseWork/FANR7640")
+```
+
+
+# Overview
+This short paper is dedicated to estimating Diameter at height (DBH), height, and volume in a forest stand in the Whitehall Forest, Georgia. The work was implemented in R 3.6.1 and RStudio 1.2.5033. Another important motivation for this paper is to demonstrate how R manage and compute point cloud data by embedding the complete R code used for this project. Readers of this paper can get the same result as I got by just following the code presented.
+
+## Prerequisite
+Following description in this paper assumes that readers has basic knowledge of [R](https://cran.r-project.org/). If you are new to [R](https://cran.r-project.org/), following websites are helpfult to quickly dive into [R](https://cran.r-project.org/).
+
+- (https://www.datacamp.com/courses)
+- (https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
+- (https://www.rstudio.com/online-learning/)
+
+# Study area and data used
+The study area is 1.8 acre of a stand located in Whitehall Forest, Athens, GA.
+
+
+![optional caption text](StudyArea.jpg)
+
+Point cloud data of the study area is acquired by using a drone in 2017. 
+The point cloud is the spatial dataset comprised of 3D points. It is collected by the sensor that emits a pulse of energy and records the time of response. The time is called as TWTT, two way travel time (https://www.usna.edu/Users/oceano/pguth/md_help/html/pt_clouds.htm).
+From the point cloud data points which were collected by the sensor equipped to the drone ([DJI Mavic Pro Drone](https://www.dji.com/newsroom/news/dji-revolutionizes-personal-flight-with-new-mavic-pro-drone)),
+[LAS data](http://desktop.arcgis.com/en/arcmap/10.3/manage-data/las-dataset/what-is-a-las-dataset-.htm),
+[orthophoto](https://online.wr.usgs.gov/ngpo/doq/doq_basics.html) and [DTM](https://en.wikipedia.org/wiki/Digital_elevation_model) data are processed. these 3 data are used for the analysis.
+
+# Preparation
+
+## Package
+This file omits the code `install.packages()`. Please install the following packages before running the code below.
+
+- lidR
+- raster
+
+If you have not installed `lidR` package, install it first. 
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+library(lidR)
+library(raster)
+library(dplyr)
+library(rgl)
+library(BiocManager)
+# BiocManager::install("EBImage")
+library(EBImage)
+library(rmarkdown)
+# source("http://bioconductor.org/biocLite.R")
+# biocLite("EBImage")# used for lastrees function
+load("pointCloudData_seg.RData")
+```
+
+## Read LAS data
+First of all read out las file using `readLAS` function.
+```{r eval=FALSE}
+pcloud=readLAS("PMRC_pointcloud.las")
+summary(pcloud@data$Z)
+```
+You can view 3D plot using `plot` function in `lidR` package.
+```{r}
+# plot(pcloud)
+```
+
+`plot(pcloud)` isn't shown in this paper because it requires long processing time to render the 3-D interactive image. If you want to see how the point cloud data looks like, you can just run `plot(pcloud)` from your R console.
+
+# NED data as DEM
+The _las_ data in this analysis does not have classification data, which distinguishes the ground point and another point. So we need to import the data to get the height of ground data. In this project, I am going to use 10m NED data.
+
+```{r}
+ned=raster("ned/ned10m33083h3_meter.tif")
+plot(ned)
+```
+
+I downloaded this data from [NRCS gateway](https://datagateway.nrcs.usda.gov/). Then, convert the unit of measurement from feet to the meter so that point cloud data and NED get the same unit. 
+
+`lasnormalize` function takes the difference between the point cloud and reference data. In this project, reference data is NED.
+```{r eval=FALSE}
+pcloud=lidR::lasnormalize(pcloud,ned)
+hist(pcloud@data$Z)
+```
+
+49063 points below 0 meter found. One possible solution is to remove points that have negative value in z column.
+
+
+##########################
+# Canopy segmentation
+##########################
+`grid_canopy` applies focal statistics to the 3D point cloud. The function detects the largest value in the moving window of 1 meter. As an output, `grid_canopy` Creates a canopy surface model using a LiDAR point cloud. For each pixel, the function returns the highest point found (point-to-raster).  You can try the size of the moving window to get a better estimation.
+
+```{r eval=FALSE}
+mov0.5 <- lidR::grid_canopy(pcloud, 1,pitfree())
+mov0.5_ras=as.raster(mov0.5)
+plot(mov0.5)
+```
+
+[`lastrees`](https://www.rdocumentation.org/packages/lidR/versions/1.2.1/topics/lastrees) function performs individual tree segmentation using one of the available algorithms. In this code, I use `li2012` as a segmentation algorithm. It is based on the Bioconductor package `EBIimage`. You need to install this package to run this method. `lastrees` function appends treeID as a new column to point cloud data. Depending on the computing capability of your machine, it may take 5-10 minutes to complete this chunk.
+
+```{r eval=FALSE}
+pcloud=lastrees(pcloud, li2012(R = 3, speed_up = 5))
+save(pcloud,file="pointCloudData_seg.RData")
+```
+
+Some portion of the points is not assigned treeID. In this paper, these points have excluded these points from the dataset.
+
+
+
+In the plot, a collection of points which have the identical treeID are given the unique color.
+
+```{r}
+summary(pcloud)
+```
+
+# Estimating height, crown diameter, and location of individual trees
+
+From here, I start estimation.
+ I create new `SpatialPointsDataFrame` which contains information about 
+- Crown diameter (m)
+- Height (m)
+- Stem Location (lat,lon)
+- DBH (cm)
+
+## Tree location estimation
+Tree position is specified by taking the mean of x and y.
+
+## Height estimation
+The highest point for each treeID represents the height of each tree. It is assigned to all the points under the same treeID as a new column. 
+
+```{r}
+crown.raw=pcloud@data%>%group_by(treeID)%>%summarize(X.loc=mean(X),
+                                                   Y.loc=mean(Y),
+                                                   H=max(Z),
+                                                    xmin=min(X),
+                                                    xmax=max(X),
+                                                    ymin=min(Y),
+                                                    ymax=max(Y))
+```
+
+`summarize` function from `dplyr` package 
+
+## Crown diameter estimation
+It is assumed that the crown has a circle shape. Thus, the crown diameter is estimated by the following formula.
+
+$$CD=\{(x_{max}-x_{min})+(y_{max}-y_{min})\}/2$$
+where,
+
+$CD$: Crown diameter (m)
+
+$x_{max}$: maximum value of latitude
+
+$x_{min}$: minimum value of latitude
+
+$y_{max}$: maximum value of longitude
+
+$y_{min}$: minimum value of longitude
+
+
+```{r}
+crown.raw$xlen=crown.raw$xmax-crown.raw$xmin
+crown.raw$ylen=crown.raw$ymax-crown.raw$ymin
+crown.raw$diam=(crown.raw$xlen+crown.raw$ylen)/2
+```
+
+
+## DBH estimation
+DBH is not directly measurable from the UAS data. To measure DBH from the given data, one solution is to apply the allometric equation to height and crown diameter. 
+In this paper, I refer to Jucker et al. (2016) to acquire the allometric function of DBH.
+
+$$D_{pred}=0.557 \times (H \times CD)^{0.809} \times \exp(0.0056^2/2)$$
+where,
+
+$D_{pred}:$ Predicted DBH
+
+$H:$ Estimated height
+
+$CD:$ Estimated crown diameter 
+
+```{r}
+crown.raw$dbh=0.557 * ((crown.raw$H * crown.raw$diam)^0.809) * exp((0.0056^2)/2)
+crown=SpatialPointsDataFrame(coords=crown.raw[,2:3],data=as.data.frame(crown.raw[4:11]))
+```
+The `crown` object is the `SpatialPointsDataFrame` that contains the highest points of individual trees.
+
+The following code shows the highest points of individual trees overlayed on orthophoto.
+```{r 2DVis}
+ortho=stack("PMRC_ortho.tif")
+plotRGB(ortho)
+plot(crown,add=T,col="red")
+```
+
+Histograms are displayed with following code (n=484).
+```{r}
+hist(crown.raw$H,main="Histogram of Height (m)")
+hist(crown.raw$diam,main="Histogram of Crown diameter (m)")
+hist(crown.raw$dbh,main="Histogram of Crown DBH (cm)")
+```
+
+Finally, following code shows 3-D plot and height.
+```{r, rgl=TRUE,eval=FALSE}
+# 
+# points3d(crown@coords[,1],crown@coords[,2],crown@data$H)# this code adds the highest point of each tree to the base plot.
+x=plot(pcloud)
+add_treetops3d(x,crown,z="H")
+```
+
+# Conclusion
+The volume of the stand is estimated using point cloud data acquired from the drone. If I get access to the field measurement data of this stand, it is possible to verify the quality of the model. 
+
+Finally, I mention some of the possible works that may improve the model.
+
+First, Jucker et al. (2016) suggest that directly estimating volume from height and crown diameter leads the better result than the model applied in this model. Thus it is worth trying to apply the direct estimation model.
+Second, I did not process the NED data to acquire a smooth elevation model. As the spatial resolution of NED data is coarser than that of point cloud data (10 meters vs. 1 cm), a large number of points which are within the same 10 meters $\times$ 10-meter pixel are assigned the same elevation. Therefore applying a spatial smoothing method may make it possible to gain more precise elevation. 
+Finally, some parameters included in this analysis are arbitrarily selected in this paper. So conducting sensitivity analysis for some of the parameters is helpful to find out the best value for each parameter. Especially values for `th_tree = x`in `lastrees` function and `lidR::grid_canopy(pcloud, x)` should be changed. 
+
+# Reference
+- Jucker Tommaso, Caspersen John, Chave J?r?me, Antin C?cile, Barbier Nicolas, Bongers Frans, . Coomes David A. (2016). Allometric equations for integrating remote sensing imagery into forest monitoring programs. Global Change Biology, 23(1), 177-190. https://doi.org/10.1111/gcb.13388
+- Ota, T., Ogawa, M., Mizoue, N., Fukumoto, K., & Yoshida, S. (2017). Forest Structure Estimation from a UAV-Based Photogrammetric Point Cloud in Managed Temperate Coniferous Forests. Forests, 8(9), 343. https://doi.org/10.3390/f8090343
