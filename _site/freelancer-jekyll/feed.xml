@@ -1,107 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<feed xmlns="http://www.w3.org/2005/Atom" >
-  <generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator>
-  <link href="https://shingobt.github.io//feed.xml" rel="self" type="application/atom+xml" />
-  <link href="https://shingobt.github.io//" rel="alternate" type="text/html" />
-  <updated>2022-01-02T18:50:48-05:00</updated>
-  <id>https://shingobt.github.io//</id>
-
-  
-    <title type="html">Shingo Obata</title>
-  
-
-  
-    <subtitle>GISer and RSer making apps using Django, Flask, R, and Google Apps Engine.</subtitle>
-  
-
-  
-
-  
-  
-    <entry>
-      <title type="html">Store opening and closure in japan</title>
-      <link href="https://shingobt.github.io//" rel="alternate" type="text/html" title="Store opening and closure in japan" />
-      <published>2020-10-18T00:00:00-04:00</published>
-      <updated>2020-10-18T00:00:00-04:00</updated>
-      <id>https://shingobt.github.io//Store%20Opening%20and%20Closure%20in%20Japan</id>
-      <content type="html" xml:base="https://shingobt.github.io//">&lt;h1 id=&quot;overview&quot;&gt;Overview&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shingo Obata</title>
+    <description>GISer and RSer making apps using Django, Flask, R, and Google Apps Engine.</description>
+    <link>https://shingobt.github.io//</link>
+    <atom:link href="https://shingobt.github.io//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 02 Jan 2022 18:50:48 -0500</pubDate>
+    <lastBuildDate>Sun, 02 Jan 2022 18:50:48 -0500</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>Store opening and closure in japan</title>
+        <description>&lt;h1 id=&quot;overview&quot;&gt;Overview&lt;/h1&gt;
 
 &lt;p&gt;Under construction.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../img/underconstruction.png&quot; /&gt;&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name></name>
+&lt;p&gt;&lt;img src=&quot;../img/underconstruction.png&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 18 Oct 2020 00:00:00 -0400</pubDate>
+        <link>https://shingobt.github.io//</link>
+        <guid isPermaLink="true">https://shingobt.github.io//</guid>
         
         
-      </author>
-
-      
-        <category term="Python, Flask, PostGIS, Spatial analysis, Leaflet" />
-      
-
-      
-
-      
-        <summary type="html">Overview</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">Air polution under pandemic</title>
-      <link href="https://shingobt.github.io//" rel="alternate" type="text/html" title="Air polution under pandemic" />
-      <published>2020-10-18T00:00:00-04:00</published>
-      <updated>2020-10-18T00:00:00-04:00</updated>
-      <id>https://shingobt.github.io//Air%20Polution%20Under%20Pandemic</id>
-      <content type="html" xml:base="https://shingobt.github.io//">&lt;h1 id=&quot;overview&quot;&gt;Overview&lt;/h1&gt;
+        <category>Python, Flask, PostGIS, Spatial analysis, Leaflet</category>
+        
+      </item>
+    
+      <item>
+        <title>Air polution under pandemic</title>
+        <description>&lt;h1 id=&quot;overview&quot;&gt;Overview&lt;/h1&gt;
 
 &lt;p&gt;Under construction.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../img/underconstruction.png&quot; /&gt;&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name></name>
+&lt;p&gt;&lt;img src=&quot;../img/underconstruction.png&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 18 Oct 2020 00:00:00 -0400</pubDate>
+        <link>https://shingobt.github.io//</link>
+        <guid isPermaLink="true">https://shingobt.github.io//</guid>
         
         
-      </author>
-
-      
-        <category term="Google Earth Engine, R, Sentinel, Spatial analysis" />
-      
-
-      
-
-      
-        <summary type="html">Overview</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">Forest resources in georgia</title>
-      <link href="https://shingobt.github.io//" rel="alternate" type="text/html" title="Forest resources in georgia" />
-      <published>2020-06-01T00:00:00-04:00</published>
-      <updated>2020-06-01T00:00:00-04:00</updated>
-      <id>https://shingobt.github.io//Forest%20Resources%20in%20Georgia</id>
-      <content type="html" xml:base="https://shingobt.github.io//">&lt;h1 id=&quot;georgia-forest-resources-visualization-with-google-earth-engine-app&quot;&gt;Georgia Forest resources visualization: With Google Earth Engine App&lt;/h1&gt;
+        <category>Google Earth Engine, R, Sentinel, Spatial analysis</category>
+        
+      </item>
+    
+      <item>
+        <title>Forest resources in georgia</title>
+        <description>&lt;h1 id=&quot;georgia-forest-resources-visualization-with-google-earth-engine-app&quot;&gt;Georgia Forest resources visualization: With Google Earth Engine App&lt;/h1&gt;
 
 &lt;p&gt;Dynamic features of the forest resources in the state of Georgia is visualized in this project.&lt;/p&gt;
 
@@ -144,41 +88,20 @@ It takes a while until the chart is shown. Thank you for your great patience in 
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;development&quot;&gt;Development&lt;/h2&gt;
-&lt;p&gt;This section is under construction.&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name></name>
+&lt;p&gt;This section is under construction.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Jun 2020 00:00:00 -0400</pubDate>
+        <link>https://shingobt.github.io//</link>
+        <guid isPermaLink="true">https://shingobt.github.io//</guid>
         
         
-      </author>
-
-      
-        <category term="Forestry, visualization, Google Earth Engine" />
-      
-
-      
-
-      
-        <summary type="html">Georgia Forest resources visualization: With Google Earth Engine App</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">Franchise location</title>
-      <link href="https://shingobt.github.io//" rel="alternate" type="text/html" title="Franchise location" />
-      <published>2019-10-18T00:00:00-04:00</published>
-      <updated>2019-10-18T00:00:00-04:00</updated>
-      <id>https://shingobt.github.io//Franchise%20Location</id>
-      <content type="html" xml:base="https://shingobt.github.io//">&lt;h1 id=&quot;interactive-dashboard-for-the-analysis-of-store-location-of-yoshinoya-and-starbucks-in-japan&quot;&gt;Interactive dashboard for the analysis of store location of Yoshinoya and Starbucks in Japan&lt;/h1&gt;
+        <category>Forestry, visualization, Google Earth Engine</category>
+        
+      </item>
+    
+      <item>
+        <title>Franchise location</title>
+        <description>&lt;h1 id=&quot;interactive-dashboard-for-the-analysis-of-store-location-of-yoshinoya-and-starbucks-in-japan&quot;&gt;Interactive dashboard for the analysis of store location of Yoshinoya and Starbucks in Japan&lt;/h1&gt;
 
 &lt;p&gt;A dashboard that shows the location and store information of Yoshinoya and Starbucks in Japan.&lt;/p&gt;
 
@@ -280,41 +203,20 @@ It takes a while until the chart is shown. Thank you for your great patience in 
   &lt;li&gt;adding more franchises as the object of comparison.&lt;/li&gt;
   &lt;li&gt;performing more advanced geospatial analysis.&lt;/li&gt;
   &lt;li&gt;change language from Japanese to English.&lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name></name>
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 18 Oct 2019 00:00:00 -0400</pubDate>
+        <link>https://shingobt.github.io//</link>
+        <guid isPermaLink="true">https://shingobt.github.io//</guid>
         
         
-      </author>
-
-      
-        <category term="Dashboard, Visualization, Data scraping, Python, R" />
-      
-
-      
-
-      
-        <summary type="html">Interactive dashboard for the analysis of store location of Yoshinoya and Starbucks in Japan</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">Height estimation with uas data</title>
-      <link href="https://shingobt.github.io//" rel="alternate" type="text/html" title="Height estimation with uas data" />
-      <published>2019-01-18T00:00:00-05:00</published>
-      <updated>2019-01-18T00:00:00-05:00</updated>
-      <id>https://shingobt.github.io//Height%20Estimation%20with%20UAS%20data</id>
-      <content type="html" xml:base="https://shingobt.github.io//">&lt;h1 id=&quot;drone-based-forest-quantitative-attributes-estimation&quot;&gt;Drone based forest quantitative attributes estimation&lt;/h1&gt;
+        <category>Dashboard, Visualization, Data scraping, Python, R</category>
+        
+      </item>
+    
+      <item>
+        <title>Height estimation with uas data</title>
+        <description>&lt;h1 id=&quot;drone-based-forest-quantitative-attributes-estimation&quot;&gt;Drone based forest quantitative attributes estimation&lt;/h1&gt;
 
 &lt;p&gt;Tree height estimation using drone imagery.&lt;/p&gt;
 
@@ -327,32 +229,16 @@ It takes a while until the chart is shown. Thank you for your great patience in 
 
 &lt;h1 id=&quot;details&quot;&gt;Details&lt;/h1&gt;
 &lt;p&gt;Please check the detail in &lt;a href=&quot;../data/DBDE.html&quot;&gt;this page&lt;/a&gt;.
-Also, &lt;a href=&quot;../data/DBDE.html&quot;&gt;this R Markdown file&lt;/a&gt; contains code used to complete this project.&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name></name>
+Also, &lt;a href=&quot;../data/DBDE.html&quot;&gt;this R Markdown file&lt;/a&gt; contains code used to complete this project.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 18 Jan 2019 00:00:00 -0500</pubDate>
+        <link>https://shingobt.github.io//</link>
+        <guid isPermaLink="true">https://shingobt.github.io//</guid>
         
         
-      </author>
-
-      
-        <category term="Dashboard, Visualization, Data scraping, Python, R" />
-      
-
-      
-
-      
-        <summary type="html">Drone based forest quantitative attributes estimation</summary>
-      
-
-      
-      
-    </entry>
-  
-</feed>
+        <category>Dashboard, Visualization, Data scraping, Python, R</category>
+        
+      </item>
+    
+  </channel>
+</rss>
