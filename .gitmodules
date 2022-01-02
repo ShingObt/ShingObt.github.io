@@ -1,0 +1,3 @@
+[submodule "freelancer-jekyll"]
+	path = freelancer-jekyll
+	url = https://github.com/StartBootstrap/freelancer-jekyll
