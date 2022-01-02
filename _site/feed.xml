@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator>
-  <link href="https://shingobt.github.io/shingoPortfolio//feed.xml" rel="self" type="application/atom+xml" />
-  <link href="https://shingobt.github.io/shingoPortfolio//" rel="alternate" type="text/html" />
-  <updated>2022-01-02T17:20:18-05:00</updated>
-  <id>https://shingobt.github.io/shingoPortfolio//</id>
+  <link href="https://shingobt.github.io//feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://shingobt.github.io//" rel="alternate" type="text/html" />
+  <updated>2022-01-02T17:58:05-05:00</updated>
+  <id>https://shingobt.github.io//</id>
 
   
     <title type="html">Shingo Obata</title>
@@ -21,11 +21,11 @@
   
     <entry>
       <title type="html">Store opening and closure in japan</title>
-      <link href="https://shingobt.github.io/shingoPortfolio//" rel="alternate" type="text/html" title="Store opening and closure in japan" />
+      <link href="https://shingobt.github.io//" rel="alternate" type="text/html" title="Store opening and closure in japan" />
       <published>2020-10-18T00:00:00-04:00</published>
       <updated>2020-10-18T00:00:00-04:00</updated>
-      <id>https://shingobt.github.io/shingoPortfolio//Store%20Opening%20and%20Closure%20in%20Japan</id>
-      <content type="html" xml:base="https://shingobt.github.io/shingoPortfolio//">&lt;h1 id=&quot;overview&quot;&gt;Overview&lt;/h1&gt;
+      <id>https://shingobt.github.io//Store%20Opening%20and%20Closure%20in%20Japan</id>
+      <content type="html" xml:base="https://shingobt.github.io//">&lt;h1 id=&quot;overview&quot;&gt;Overview&lt;/h1&gt;
 
 &lt;p&gt;Under construction.&lt;/p&gt;
 
@@ -59,11 +59,11 @@
   
     <entry>
       <title type="html">Air polution under pandemic</title>
-      <link href="https://shingobt.github.io/shingoPortfolio//" rel="alternate" type="text/html" title="Air polution under pandemic" />
+      <link href="https://shingobt.github.io//" rel="alternate" type="text/html" title="Air polution under pandemic" />
       <published>2020-10-18T00:00:00-04:00</published>
       <updated>2020-10-18T00:00:00-04:00</updated>
-      <id>https://shingobt.github.io/shingoPortfolio//Air%20Polution%20Under%20Pandemic</id>
-      <content type="html" xml:base="https://shingobt.github.io/shingoPortfolio//">&lt;h1 id=&quot;overview&quot;&gt;Overview&lt;/h1&gt;
+      <id>https://shingobt.github.io//Air%20Polution%20Under%20Pandemic</id>
+      <content type="html" xml:base="https://shingobt.github.io//">&lt;h1 id=&quot;overview&quot;&gt;Overview&lt;/h1&gt;
 
 &lt;p&gt;Under construction.&lt;/p&gt;
 
@@ -97,11 +97,11 @@
   
     <entry>
       <title type="html">Forest resources in georgia</title>
-      <link href="https://shingobt.github.io/shingoPortfolio//" rel="alternate" type="text/html" title="Forest resources in georgia" />
+      <link href="https://shingobt.github.io//" rel="alternate" type="text/html" title="Forest resources in georgia" />
       <published>2020-06-01T00:00:00-04:00</published>
       <updated>2020-06-01T00:00:00-04:00</updated>
-      <id>https://shingobt.github.io/shingoPortfolio//Forest%20Resources%20in%20Georgia</id>
-      <content type="html" xml:base="https://shingobt.github.io/shingoPortfolio//">&lt;h1 id=&quot;georgia-forest-resources-visualization-with-google-earth-engine-app&quot;&gt;Georgia Forest resources visualization: With Google Earth Engine App&lt;/h1&gt;
+      <id>https://shingobt.github.io//Forest%20Resources%20in%20Georgia</id>
+      <content type="html" xml:base="https://shingobt.github.io//">&lt;h1 id=&quot;georgia-forest-resources-visualization-with-google-earth-engine-app&quot;&gt;Georgia Forest resources visualization: With Google Earth Engine App&lt;/h1&gt;
 
 &lt;p&gt;Dynamic features of the forest resources in the state of Georgia is visualized in this project.&lt;/p&gt;
 
@@ -174,11 +174,11 @@ It takes a while until the chart is shown. Thank you for your great patience in 
   
     <entry>
       <title type="html">Franchise location</title>
-      <link href="https://shingobt.github.io/shingoPortfolio//" rel="alternate" type="text/html" title="Franchise location" />
+      <link href="https://shingobt.github.io//" rel="alternate" type="text/html" title="Franchise location" />
       <published>2019-10-18T00:00:00-04:00</published>
       <updated>2019-10-18T00:00:00-04:00</updated>
-      <id>https://shingobt.github.io/shingoPortfolio//Franchise%20Location</id>
-      <content type="html" xml:base="https://shingobt.github.io/shingoPortfolio//">&lt;h1 id=&quot;interactive-dashboard-for-the-analysis-of-store-location-of-yoshinoya-and-starbucks-in-japan&quot;&gt;Interactive dashboard for the analysis of store location of Yoshinoya and Starbucks in Japan&lt;/h1&gt;
+      <id>https://shingobt.github.io//Franchise%20Location</id>
+      <content type="html" xml:base="https://shingobt.github.io//">&lt;h1 id=&quot;interactive-dashboard-for-the-analysis-of-store-location-of-yoshinoya-and-starbucks-in-japan&quot;&gt;Interactive dashboard for the analysis of store location of Yoshinoya and Starbucks in Japan&lt;/h1&gt;
 
 &lt;p&gt;A dashboard that shows the location and store information of Yoshinoya and Starbucks in Japan.&lt;/p&gt;
 
@@ -310,11 +310,11 @@ It takes a while until the chart is shown. Thank you for your great patience in 
   
     <entry>
       <title type="html">Height estimation with uas data</title>
-      <link href="https://shingobt.github.io/shingoPortfolio//" rel="alternate" type="text/html" title="Height estimation with uas data" />
+      <link href="https://shingobt.github.io//" rel="alternate" type="text/html" title="Height estimation with uas data" />
       <published>2019-01-18T00:00:00-05:00</published>
       <updated>2019-01-18T00:00:00-05:00</updated>
-      <id>https://shingobt.github.io/shingoPortfolio//Height%20Estimation%20with%20UAS%20data</id>
-      <content type="html" xml:base="https://shingobt.github.io/shingoPortfolio//">&lt;h1 id=&quot;drone-based-forest-quantitative-attributes-estimation&quot;&gt;Drone based forest quantitative attributes estimation&lt;/h1&gt;
+      <id>https://shingobt.github.io//Height%20Estimation%20with%20UAS%20data</id>
+      <content type="html" xml:base="https://shingobt.github.io//">&lt;h1 id=&quot;drone-based-forest-quantitative-attributes-estimation&quot;&gt;Drone based forest quantitative attributes estimation&lt;/h1&gt;
 
 &lt;p&gt;Tree height estimation using drone imagery.&lt;/p&gt;
 
